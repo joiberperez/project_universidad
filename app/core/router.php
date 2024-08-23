@@ -2,21 +2,14 @@
 
 
 class Router {
-        private $routes = [
-            ['path'=>'/sistema/','views'=>'ViewHome'],
-            ['path'=>'/sistema/cliente/','views'=>'ViewCliente'],
-            ['path'=>'/sistema/proveedor/','views'=>'ViewProveedor'],
-            ['path'=>'/sistema/login/','views'=>'ViewLogin'],
-            ['path'=>'/crud_php/usuarios/@int/','views'=>'ViewUserDetail'],
-            ['path'=>'/project/cliente/editar/@str/','views'=>'UsuarioController','method'=>'detalle']
-        ];
-
-       function run(){
+    
+    function run(){
+           include ROOT . "/core/routes.php";
 
             $url = $_SERVER['REQUEST_URI']; 
             
             
-            foreach ($this->routes as $key => $value) {
+            foreach ($routes as $key => $value) {
                $ruta_registrada = preg_quote($value['path'], '/');
 
                 // Reemplaza los segmentos variables con patrones de expresión regular apropiados

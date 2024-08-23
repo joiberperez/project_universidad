@@ -4,7 +4,8 @@ $apps = [
     'cliente',
     'proveedor',
     'home',
-    'login'
+    'login',
+    'producto'
 ]
 
 

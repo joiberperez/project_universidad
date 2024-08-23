@@ -1,12 +1,11 @@
-
-    <?php include ROOT . "/templates/layouts/head.php"; ?>
+<?php include ROOT . "/templates/layouts/head.php"; ?>
 
 <body class="nav-fixed">
     <?php include ROOT . "/templates/layouts/navbar.php"; ?>
-    
+
     <div id="layoutSidenav">
         <?php include ROOT . "/templates/layouts/sidebar.php"; ?>
-        
+
         <div id="layoutSidenav_content">
             <main>
                 <header style="background-color: #2A3F54;" class="page-header page-header-dark bg-primary pb-10">
@@ -82,10 +81,7 @@
                                                         <label for="exampleFormControlInput1" class="form-label">Nombre</label>
                                                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Nacionalidad</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
+
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlTextarea1" class="form-label">Cedula</label>
                                                         <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
@@ -97,6 +93,11 @@
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
                                                         <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+                                                    </div>
+
+                                                    <div class="d-grid gap-2">
+                                                        <button class="btn btn-primary" type="button">Guardar</button>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -115,7 +116,7 @@
                     </div>
                 </div>
             </main>
-          
+
             <footer class="footer-admin mt-auto footer-light">
                 <div class="container-xl px-4">
                     <div class="row">
@@ -130,6 +131,6 @@
             </footer>
         </div>
     </div>
-                                    
+
     <?php include ROOT . "/templates/layouts/scripts.php"; ?>
 </body>

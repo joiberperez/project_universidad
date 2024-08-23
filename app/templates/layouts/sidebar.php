@@ -22,7 +22,7 @@
                             <!-- Sidenav Menu Heading (Core)-->
                             <div class="sidenav-menu-heading"></div>
                             <!-- Sidenav Accordion (Dashboard)-->
-                            <a class="nav-link " href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <a class="nav-link " href="/sistema/" >
                                 <div class="nav-link-icon"><i class="fa-solid fa-house"></i></div>
                                 Inicio
                             </a>
@@ -30,7 +30,7 @@
                             <!-- Sidenav Heading (Custom)-->
                             
                             <!-- Sidenav Accordion (Pages)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link collapsed" href="/sistema/cliente/" >
                                 <div class="nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Clientes
                               
@@ -53,7 +53,7 @@
                             <!-- Sidenav Heading (UI Toolkit)-->
                             
                             <!-- Sidenav Accordion (Layout)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="/sistema/producto/">
                                 <div class="nav-link-icon"><i class="fa-brands fa-shopify"></i></div>
                                 Productos
                                

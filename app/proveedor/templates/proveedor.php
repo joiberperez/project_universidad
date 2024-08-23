@@ -76,32 +76,37 @@
                                         <!-- Dashboard Tab Pane 2-->
                                         <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
                                             <div class="row">
+                                            <div class="col-6">
+                                                    <img class="opacity-75 mt-4" src="<?= PUBLICO ?>images/proveedor.png" alt="clientes" style="width: 90%;">
+                                                </div>
                                                 <div class="col-5">
 
                                                     <div class="mb-3">
-                                                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                                                        <label for="exampleFormControlInput1" class="form-label">Nombre de Empresa</label>
                                                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Nacionalidad</label>
+                                                        <label for="exampleFormControlTextarea1" class="form-label">Rif</label>
                                                         <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Cedula</label>
+                                                        <label for="exampleFormControlTextarea1" class="form-label">Correo electronico</label>
                                                         <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Direccion</label>
+                                                        <label for="exampleFormControlTextarea1" class="form-label">tejefono principal</label>
                                                         <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
                                                         <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
                                                     </div>
+                                                    <div class="d-grid gap-2">
+                                                        <button class="btn btn-primary" type="button">Guardar</button>
+
+                                                    </div>
                                                 </div>
-                                                <div class="col-6">
-                                                    <img class="opacity-75 mt-4" src="<?= PUBLICO ?>images/clientes.png" alt="clientes" style="width: 90%;">
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
