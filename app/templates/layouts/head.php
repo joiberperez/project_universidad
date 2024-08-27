@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Overview - SB Admin Pro</title>
+        <title>Chapulin</title>
         <?php echo "<link href=" . PUBLICO . "lib/sb/css/styles.css" . " rel='stylesheet' "?>
        
         
