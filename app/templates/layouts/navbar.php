@@ -134,7 +134,7 @@
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                             Seguridad
                         </a>
-                        <a class="dropdown-item" href="#!">
+                        <a class="dropdown-item" href="/sistema/logout/">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                             Cerrar Sesión
                         </a>

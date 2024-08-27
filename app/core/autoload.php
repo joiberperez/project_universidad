@@ -19,7 +19,7 @@ spl_autoload_register(function($class){
                // echo $ruta;
                 
             }else if(strstr($class,'View')){
-
+                
                 $ruta =  ROOT . "/$app/" .  'views' . '.php';
                 
             }else{

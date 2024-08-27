@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="card-body">
                                     <!-- Login form-->
-    <form class="form" method="post" action="./login.php">
+    <form class="form" name="login" method="post" action="/sistema/login/" id="login">
 
         <?php 
         //verifica que la variable este en la session
@@ -79,7 +79,15 @@
         </div>
     </div>
     <?php include ROOT . "/templates/layouts/scripts.php"; ?>
-    
+    <script>
+       /*  $("#login").submit(function(e){
+            e.preventDefault();
+            const data = new FormData(this);
+            $.post("/sistema/login/",data,(data)=>{
+                console.log(data);
+            })
+        }) */
+    </script>
 
 </body>
 

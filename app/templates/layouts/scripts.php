@@ -6,6 +6,8 @@
         <script src="/sistema/public/lib/sb/demo/chart-pie-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="/sistema/public/lib/sb/js/datatables/datatables-simple-demo.js"></script>
+        <script src="/sistema/public/lib/sb/js/litepicker.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
 
        
         

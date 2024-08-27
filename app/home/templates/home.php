@@ -12,7 +12,7 @@
                                     <div class="col-auto mt-4">
                                         <h1 class="page-header-title">
                                             <div class="page-header-icon"><i data-feather="users"></i></div>
-                                            Bienvenido <?= $this->nombre; ?>
+                                            Bienvenido <?= $_SESSION["nombre"] ?>
                                         </h1>
                                         <div class="page-header-subtitle">Puedes agregar y listar clientes</div>
                                     </div>
