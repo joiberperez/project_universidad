@@ -9,6 +9,8 @@
 <?php include ROOT . "/core/autoload.php" ?>
 
 <?php 
+include_once ROOT . "/core/funciones.php";
+
 $router = new Router();
 $router->run();
 ?>

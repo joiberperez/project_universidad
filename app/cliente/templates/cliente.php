@@ -16,6 +16,7 @@
                                     <h1 class="page-header-title">
                                         <div class="page-header-icon"><i data-feather="users"></i></div>
                                         Clientes
+
                                     </h1>
                                     <div class="page-header-subtitle">Puedes agregar y listar clientes</div>
                                 </div>
@@ -54,6 +55,7 @@
                                                 </div>
                                             </div>
                                             <table class="table">
+
                                                 <thead>
                                                     <th>#</th>
                                                     <th>nombre</th>
@@ -63,11 +65,17 @@
                                                 </thead>
                                                 <tbody>
 
-                                                    <td>1</td>
-                                                    <td>Irianny</td>
-                                                    <td>V-33371997</td>
-                                                    <td>pinal</td>
-                                                    <td>04147005964</td>
+
+                                                    <?php foreach ($this->clientes as $cliente) { ?>
+                                                        <tr>
+
+                                                            <td><?= $cliente["id"]; ?></td>
+                                                            <td><?= $cliente["nombre"]; ?></td>
+                                                            <td>V- <?= $cliente["cedula"]; ?></td>
+                                                            <td><?= $cliente["direccion"]; ?></td>
+                                                            <td><?= $cliente["telefono"]; ?></td>
+                                                        </tr>
+                                                    <?php } ?>
 
                                                 </tbody>
                                             </table>
@@ -76,29 +84,32 @@
                                         <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
                                             <div class="row">
                                                 <div class="col-5">
+                                                    <form action="<?= get_path("cliente"); ?>" method="post">
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                                                            <input type="text" class="form-control" name="nombre" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                        </div>
 
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                    </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Cedula</label>
+                                                            <input class="form-control" name="cedula" id="exampleFormControlTextarea1" rows="3"></input>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Direccion</label>
+                                                            <input class="form-control" name="direccion" id="exampleFormControlTextarea1" rows="3"></input>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
+                                                            <input class="form-control" name="telefono" id="exampleFormControlTextarea1" rows="3"></input>
+                                                        </div>
 
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Cedula</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Direccion</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
+                                                        <div class="d-grid gap-2">
+                                                            <button class="btn btn-primary" type="submit">Guardar</button>
 
-                                                    <div class="d-grid gap-2">
-                                                        <button class="btn btn-primary" type="button">Guardar</button>
+                                                        </div>
+                                                    </form>
 
-                                                    </div>
+
                                                 </div>
                                                 <div class="col-6">
                                                     <img class="opacity-75 mt-4" src="<?= PUBLICO ?>images/clientes.png" alt="clientes" style="width: 90%;">

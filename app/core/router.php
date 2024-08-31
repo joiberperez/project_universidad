@@ -3,6 +3,8 @@
 
 class Router {
     
+    
+
     function run(){
            include ROOT . "/core/routes.php";
 
@@ -28,14 +30,21 @@ class Router {
 
                 if (preg_match($expresion_regular, $url,$matches)) {
                     $controller = $value['views'];
-                    if(!isset($matches[1])){
-                        $controller = new $controller();
-                        
+                    if(!isset($_SESSION["usuario"])){
+                        //header('Location: /sistema/login/');
+                        $login = new ViewLogin;
                     }else{
-                        $controller = new $controller($matches[1]);
-                        
 
+                        if(!isset($matches[1])){
+                            $controller = new $controller();
+                            
+                        }else{
+                            $controller = new $controller($matches[1]);
+                            
+    
+                        }
                     }
+                    
 
                     
                     exit;

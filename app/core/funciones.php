@@ -1,6 +1,6 @@
 <?php
 
-function render($template){
+/* function render($template){
     include APPS;
     if(in_array("templates",scandir(ROOT))){
         if(file_exists(ROOT . "/templates/". $template . ".php")){
@@ -30,11 +30,24 @@ function render($template){
        }
 
     }else{
-        
-        
+      
+    
     }
-}
+    } */
+   
 
+   
+    function get_path($name_path){
+      include ROOT . "/core/routes.php";
+      foreach($routes as $route){
+          if($name_path === $route['name']){
+              return $route["path"];
+              
+          }
+      }
+      echo "no se ha encontrado la ruta con el nombre proporcionado";
+      
+    }
 
 
 
