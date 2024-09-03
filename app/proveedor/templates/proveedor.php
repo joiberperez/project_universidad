@@ -1,12 +1,11 @@
-
 <?php include ROOT . "/templates/layouts/head.php"; ?>
 
 <body class="nav-fixed">
     <?php include ROOT . "/templates/layouts/navbar.php"; ?>
-    
+
     <div id="layoutSidenav">
         <?php include ROOT . "/templates/layouts/sidebar.php"; ?>
-        
+
         <div id="layoutSidenav_content">
             <main>
                 <header style="background-color: #2A3F54;" class="page-header page-header-dark bg-primary pb-10">
@@ -64,11 +63,16 @@
                                                 </thead>
                                                 <tbody>
 
-                                                    <td>1</td>
-                                                    <td>Irianny</td>
-                                                    <td>V-33371997</td>
-                                                    <td>pinal</td>
-                                                    <td>04147005964</td>
+                                                    <?php foreach ($this->proveedores as $cliente) { ?>
+                                                        <tr>
+
+                                                            <td><?= $cliente["id"]; ?></td>
+                                                            <td><?= $cliente["nombre"]; ?></td>
+                                                            <td>V- <?= $cliente["cedula"]; ?></td>
+                                                            <td><?= $cliente["direccion"]; ?></td>
+                                                            <td><?= $cliente["telefono"]; ?></td>
+                                                        </tr>
+                                                    <?php } ?>
 
                                                 </tbody>
                                             </table>
@@ -76,37 +80,40 @@
                                         <!-- Dashboard Tab Pane 2-->
                                         <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
                                             <div class="row">
-                                            <div class="col-6">
+                                                <div class="col-6">
                                                     <img class="opacity-75 mt-4" src="<?= PUBLICO ?>images/proveedor.png" alt="clientes" style="width: 90%;">
                                                 </div>
                                                 <div class="col-5">
+                                                    <form action="<?= get_path('proveedor') ?>" method="post">
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlInput1" class="form-label">Nombre de Empresa</label>
+                                                            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_empresa" placeholder="name@example.com">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Rif</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="3" name="rif"></input>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Correo electronico</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="3" name="correo_electronico"></input>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">tejefono principal</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="3" name="telefono_principal"></input>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Direccion</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+                                                        </div>
+                                                        <div class="d-grid gap-2">
+                                                            <button class="btn btn-primary" type="button">Guardar</button>
 
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlInput1" class="form-label">Nombre de Empresa</label>
-                                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Rif</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Correo electronico</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">tejefono principal</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
-                                                        <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                                                    </div>
-                                                    <div class="d-grid gap-2">
-                                                        <button class="btn btn-primary" type="button">Guardar</button>
+                                                        </div>
+                                                    </form>
 
-                                                    </div>
+
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -120,10 +127,10 @@
                     </div>
                 </div>
             </main>
-          
-        <?php include ROOT . "/templates/layouts/footer.php"?>
+
+            <?php include ROOT . "/templates/layouts/footer.php" ?>
         </div>
     </div>
-                                    
+
     <?php include ROOT . "/templates/layouts/scripts.php"; ?>
 </body>

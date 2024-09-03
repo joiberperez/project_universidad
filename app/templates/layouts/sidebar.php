@@ -84,7 +84,7 @@
                     <div class="sidenav-footer">
                         <div class="sidenav-footer-content">
                             <div class="sidenav-footer-subtitle">Bienvenido(a):</div>
-                            <div class="sidenav-footer-title">Gladis Rondón</div>
+                            <div class="sidenav-footer-title"><?=  $_SESSION["usuario"] ?> </div>
                         </div>
                     </div>
                 </nav>

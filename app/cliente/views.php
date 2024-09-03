@@ -21,7 +21,7 @@ class ViewCliente extends View
             "direccion" => $_POST["direccion"],
         ];
         $model = new ModelCliente();
-        $model->create($data);
+        $model->create2($data);
 
         header("Location: " . get_path('cliente'));
     }
