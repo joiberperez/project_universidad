@@ -67,7 +67,7 @@ class ViewRender
                 }
             }
         } else {
-            $error = "la carpeta templates principal no existe";
+            $error = "La carpeta templates principal no existe";
         }
         if ($error) {
             echo $error;
