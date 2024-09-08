@@ -23,7 +23,7 @@
                             <!-- Sidenav Menu Heading (Core)-->
                             <div class="sidenav-menu-heading"></div>
                             <!-- Sidenav Accordion (Dashboard)-->
-                            <a class="nav-link " href="<?= get_path("home") ?>" >
+                            <a class="nav-link " href="<?= $this->get_path("home") ?>" >
                                 <div class="nav-link-icon"><i class="fa-solid fa-house"></i></div>
                                 Inicio
                             </a>
@@ -31,7 +31,7 @@
                             <!-- Sidenav Heading (Custom)-->
                             
                             <!-- Sidenav Accordion (Pages)-->
-                            <a class="nav-link collapsed" href="<?= get_path("cliente") ?>" >
+                            <a class="nav-link collapsed" href="<?= $this->get_path("cliente") ?>" >
                                 <div class="nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Clientes
                               
@@ -50,11 +50,14 @@
                                 <nav class="sidenav-menu-nested nav">
                                     <a class="nav-link" href="multi-tenant-select.html">Compra</a>
                                 </nav>
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<?=$this->get_path('proveedor');?>">Listado</a>
+                                </nav>
                             </div>
                             <!-- Sidenav Heading (UI Toolkit)-->
                             
                             <!-- Sidenav Accordion (Layout)-->
-                            <a class="nav-link collapsed" href="<?= get_path("producto") ?>">
+                            <a class="nav-link collapsed" href="<?= $this->get_path("producto") ?>">
                                 <div class="nav-link-icon"><i class="fa-brands fa-shopify"></i></div>
                                 Productos
                                

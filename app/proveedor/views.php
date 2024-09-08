@@ -12,19 +12,7 @@ class ViewProveedor extends View {
         $this->render($this->template);
     }
     
-    public function post()
-    {
-        $data = [
-            "nombre" => $_POST["nombre"],
-            "cedula" => $_POST["cedula"],
-            "telefono" => $_POST["telefono"],
-            "direccion" => $_POST["direccion"],
-        ];
-        $model = new ModelCliente();
-        $model->create($data);
-
-        header("Location: " . get_path('proveedor'));
-    }
+  
 }
 
 

@@ -548,66 +548,9 @@
                         </div>
                     </div>
                 </main>
-   <!--              <main>
-                    <header class="py-10 mb-4 bg-gradient-primary-to-secondary">
-                        <div class="container-xl px-4">
-                            <div class="text-center">
-                                <h1 class="text-white">Welcome to SB Admin Pro <button class="btn btn-primary">Hola</button> </h1>
-                                <p class="lead mb-0 text-white-50">A professionally designed admin panel template built with Bootstrap 5</p>
-                            </div>
-                        </div>
-                    </header>
-                    <!-- Main page content
-                    <div class="container-xl px-4 mt-n10">
-                        <div class="row">
-                            <div class="col-xl-4 mb-4">
-                                <!-- Dashboard example card 1-
-                                <a class="card lift h-100" href="#!">
-                                    <div class="card-body d-flex justify-content-center flex-column">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="me-3">
-                                                <i class="feather-xl text-primary mb-3" data-feather="package"></i>
-                                                <h5>Powerful Components</h5>
-                                                <div class="text-muted small">To create informative visual elements on your pages</div>
-                                            </div>
-                                            <img src="assets/img/illustrations/browser-stats.svg" alt="..." style="width: 8rem" />
-                                        </div>
-                                    </div>
-                                </a>
-<!--                             </div>
-                    <div class="container-xl px-4">
-                        <h2 class="mt-5 mb-0">Dashboards</h2>
-                        <p>Three dashboard examples to get you started!</p>
-                        <hr class="mt-0 mb-4" />
-                        <div class="row">
-                            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-1.html"><img class="img-fluid" src="https://assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/dashboards/default.png" alt="..." /></a>
-                                <div class="text-center small">Default Dashboard</div>
-                            </div>
-                            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-3.html"><img class="img-fluid" src="https://assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/dashboards/affiliate.png" alt="..." /></a>
-                                <div class="text-center small">Affiliate Dashboard</div>
-                            </div>
-                            <div class="col-md-6 col-xl-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-2.html"><img class="img-fluid" src="https://assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/dashboards/multipurpose.png" alt="..." /></a>
-                                <div class="text-center small">Multipurpose Dashboard</div>
-                            </div>
-                        </div>
- 
-                    </div> 
-                </main> -->
-                <footer class="footer-admin mt-auto footer-light">
-                    <div class="container-xl px-4">
-                        <div class="row">
-                            <div class="col-md-6 small">Copyright © Your Website 2021</div>
-                            <div class="col-md-6 text-md-end small">
-                                <a href="#!">Privacy Policy</a>
-                                ·
-                                <a href="#!">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+
+                
+                <?php include ROOT . "/templates/layouts/footer.php" ?>
             </div>
         </div>
       <?php include ROOT . "/templates/layouts/scripts.php" ?>

@@ -56,7 +56,7 @@ class Model
         $stmt->execute($datos);
         
     }
-    function create2($datos){
+    function create($datos){
         $this->consultaPost($this->conn, $this->table, $datos);
         
     }
@@ -73,4 +73,25 @@ class Model
         echo "se ha creado el usuario conn exito";
 
      } */
+
+     function get_page($registrosPorPagina,$offset,$filtro,$campo)
+     {
+         $sql = "SELECT * FROM $this->table WHERE $campo LIKE '%$filtro%' LIMIT :limit OFFSET :offset";
+         $stmt = $this->conn->prepare($sql);
+         $stmt->bindParam(':limit', $registrosPorPagina, PDO::PARAM_INT);
+         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+         $stmt->execute();
+ 
+         $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         return $clientes;
+     }
+ 
+     function get_count($campo=null,$filtro=null)
+     {
+         if(!empty($campo)) $sql = "SELECT COUNT(*) FROM $this->table WHERE $campo LIKE '%$filtro%'";
+         else $sql = "SELECT COUNT(*) FROM $this->table";
+         $stmt = $this->conn->query($sql);
+         $totalRegistros = $stmt->fetchColumn();
+         return $totalRegistros;
+     }
 }

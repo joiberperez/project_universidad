@@ -84,7 +84,7 @@
                                                     <img class="opacity-75 mt-4" src="<?= PUBLICO ?>images/proveedor.png" alt="clientes" style="width: 90%;">
                                                 </div>
                                                 <div class="col-5">
-                                                    <form action="<?= get_path('proveedor') ?>" method="post">
+                                                    <form action="<?= $this->get_path('proveedor') ?>" method="post">
                                                         <div class="mb-3">
                                                             <label for="exampleFormControlInput1" class="form-label">Nombre de Empresa</label>
                                                             <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_empresa" placeholder="name@example.com">
@@ -106,7 +106,7 @@
                                                             <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
                                                         </div>
                                                         <div class="d-grid gap-2">
-                                                            <button class="btn btn-primary" type="button">Guardar</button>
+                                                            <button class="btn btn-primary" type="submit">Guardar</button>
 
                                                         </div>
                                                     </form>

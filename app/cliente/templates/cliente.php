@@ -47,44 +47,23 @@
                                                 <div class="col-12 col-lg-4">
                                                     <form class="form-inline me-auto d-none d-lg-block me-3">
                                                         <div class="input-group input-group-joined input-group-solid">
-                                                            <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
-                                                            <div class="input-group-text"><i data-feather="search"></i></div>
+                                                            <input class="form-control pe-0" id="busqueda-tabla" onkeyup="filtrarTabla()" type="text" placeholder="Search" aria-label="Search" />
+                                                            <div class="input-group-text"><i data-feather="search" ></i></div>
                                                         </div>
                                                     </form>
-
                                                 </div>
                                             </div>
-                                            <table class="table">
+                                            
+                                            <div id="data-table">
 
-                                                <thead>
-                                                    <th>#</th>
-                                                    <th>nombre</th>
-                                                    <th>Cedula</th>
-                                                    <th>Direccion</th>
-                                                    <th>Telefono</th>
-                                                </thead>
-                                                <tbody>
-
-
-                                                    <?php foreach ($this->clientes as $cliente) { ?>
-                                                        <tr>
-
-                                                            <td><?= $cliente["id"]; ?></td>
-                                                            <td><?= $cliente["nombre"]; ?></td>
-                                                            <td>V- <?= $cliente["cedula"]; ?></td>
-                                                            <td><?= $cliente["direccion"]; ?></td>
-                                                            <td><?= $cliente["telefono"]; ?></td>
-                                                        </tr>
-                                                    <?php } ?>
-
-                                                </tbody>
-                                            </table>
+                                            </div>
+                                            
                                         </div>
                                         <!-- Dashboard Tab Pane 2-->
                                         <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
                                             <div class="row">
                                                 <div class="col-5">
-                                                    <form action="<?= get_path("cliente"); ?>" method="post">
+                                                    <form action="<?= $this->get_path("cliente"); ?>" method="post">
                                                         <div class="mb-3">
                                                             <label for="exampleFormControlInput1" class="form-label">Nombre</label>
                                                             <input type="text" class="form-control" name="nombre" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -144,4 +123,27 @@
     </div>
 
     <?php include ROOT . "/templates/layouts/scripts.php"; ?>
+    <script>
+        $(document).ready(function(){
+            $.get("/sistema/cliente/page/1/").done(function(data){
+                $("#data-table").html(data);
+            })
+            
+        })
+        
+        function filtrarTabla(){
+            let filtro = $("#busqueda-tabla").val();
+            
+            $.get("/sistema/cliente/page/1/",{ filtro }).done(function(data){
+                console.log("hola")
+                $("#data-table").html(data);
+            })
+        }
+        function limpiarFiltro(){
+            let filtro = $("#busqueda-tabla").val("");
+            alert("hola");
+            console.log(filtro);
+            
+        }
+    </script>
 </body>
