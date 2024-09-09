@@ -1,1 +1,1 @@
-Proyecto desarrollado con fines educativos por joiber, revisado y depurado por el Gran Sathoru-Dev
+Proyecto desarrollado con fines educativos por joiber, optimizado y depurado por el Gran Sathoru-Dev
