@@ -1,3 +1,4 @@
+<div id="modal"></div>
 <script src="/sistema/public/lib/js/bootstrap.bundle.min.js"></script>
 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="/sistema/public/lib/sb/js/bootstrap.bundle.min.js"></script>
@@ -9,9 +10,12 @@
 <script src="/sistema/public/lib/sb/js/datatables/datatables-simple-demo.js"></script>
 <script src="/sistema/public/lib/sb/js/litepicker.js"></script>
 <script src="/sistema/public/js/jquery.js"></script>
+<script src="/sistema/public/js/funciones.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href= "<?=PUBLICO. 'lib/fontawesome/js/all.min.js'?>">
 
 <script>
     (function() {

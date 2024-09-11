@@ -123,7 +123,7 @@
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="public/image/icon.jpeg" /></a>
                     <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                         <h6 class="dropdown-header d-flex align-items-center">
-                            <img class="dropdown-user-img" src="public/image/logo.jpg" />
+                            <img class="dropdown-user-img" src="<?= PUBLICO ?>images/product.png" />
                             <div class="dropdown-user-details">
                                 <div class="dropdown-user-details-name">Gladis Rondón</div>
                                 <div class="dropdown-user-details-email"><p>Administrador</p></div>

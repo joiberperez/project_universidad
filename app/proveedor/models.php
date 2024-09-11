@@ -2,7 +2,7 @@
 
 class ModelProveedor extends Model {
     
-    public $table = "proveedor";
+    public $table = "proveedores";
     
 
 

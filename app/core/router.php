@@ -144,11 +144,12 @@
                     exit; # Ya se ha culminado
                 }
             }
+            echo $uri;
             include ROOT . "/" . FOLDER_TEMPLATES  . "/404.php";
         }
 
         # Obtiene una url solo con el nombre de la ruta registrada
-         public function get_path($name) {
+         public function get_path($name,$parameters=null) {
 
             $this->load_urls(); # Cargamos las urls
 
@@ -157,6 +158,21 @@
 
             $id_ruta = array_search($name, $this->names); # Obtiene el id de la ruta
             $ruta = $this->urls[$id_ruta]; # Obtiene la ruta
+            if(!empty($parameters)){
+               
+                //$tmp_url = preg_quote($ruta, '/'); # Prepara la url iterada
+
+                # Reemplaza los segmentos variables con patrones de expresión regular apropiados
+                if(strpos($ruta,"@int") != false) { # Para parametros int
+                    $ruta = str_replace('@int',$parameters, $ruta);
+                }
+              /*   if(strpos($tmp_url,"@str") != false){ # Para parametros str
+                    $tmp_url = preg_replace('/@str/', $parameters, $tmp_url);
+                } */
+
+                # Crea la expresión regular completa para comparar las rutas
+                
+            }
 
             return 'http://'."{$_SERVER["SERVER_NAME"]}".$ruta; # Devuelve la url
         }

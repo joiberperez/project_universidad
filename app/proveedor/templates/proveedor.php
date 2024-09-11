@@ -46,36 +46,14 @@
                                                 <div class="col-12 col-lg-4">
                                                     <form class="form-inline me-auto d-none d-lg-block me-3">
                                                         <div class="input-group input-group-joined input-group-solid">
-                                                            <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
+                                                            <input class="form-control pe-0" type="search" placeholder="Search" id="busqueda-tabla" aria-label="Search" onkeyup="filtrarTabla()"/>
                                                             <div class="input-group-text"><i data-feather="search"></i></div>
                                                         </div>
                                                     </form>
 
                                                 </div>
                                             </div>
-                                            <table class="table">
-                                                <thead>
-                                                    <th>#</th>
-                                                    <th>nombre</th>
-                                                    <th>Cedula</th>
-                                                    <th>Direccion</th>
-                                                    <th>Telefono</th>
-                                                </thead>
-                                                <tbody>
-
-                                                    <?php foreach ($this->proveedores as $cliente) { ?>
-                                                        <tr>
-
-                                                            <td><?= $cliente["id"]; ?></td>
-                                                            <td><?= $cliente["nombre"]; ?></td>
-                                                            <td>V- <?= $cliente["cedula"]; ?></td>
-                                                            <td><?= $cliente["direccion"]; ?></td>
-                                                            <td><?= $cliente["telefono"]; ?></td>
-                                                        </tr>
-                                                    <?php } ?>
-
-                                                </tbody>
-                                            </table>
+                                            <div id="data-table"></div>
                                         </div>
                                         <!-- Dashboard Tab Pane 2-->
                                         <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
@@ -134,3 +112,29 @@
 
     <?php include ROOT . "/templates/layouts/scripts.php"; ?>
 </body>
+
+<script>
+    $(document).ready(function(){
+            
+            $.get("/sistema/proveedor/page/1/").done(function(data){
+                $("#data-table").html(data);
+            })
+            
+        })
+        
+        function filtrarTabla(){
+            let filtro = $("#busqueda-tabla").val();
+            console.log(filtro)
+            $.get("/sistema/proveedor/page/1/",{ filtro }).done(function(data){
+                console.log("hola")
+                $("#data-table").html(data);
+            })
+        }
+        function limpiarFiltro(){
+            let filtro = $("#busqueda-tabla").val("");
+            alert("hola");
+            console.log(filtro);
+            
+        }
+    </script>
+            

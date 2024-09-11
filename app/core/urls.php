@@ -32,6 +32,8 @@
     $this->new_url('/sistema/', 'ViewHome', 'home');
     $this->new_url('/sistema/cliente/', 'ViewCliente', 'cliente');
     $this->new_url('/sistema/cliente/page/@int/', 'ViewClienteList', 'cliente_list');
+    $this->new_url('/sistema/proveedor/page/@int/', 'ViewProveedorList', 'proveedor_list');
+    $this->new_url('/sistema/proveedor/detail/@int/', 'ViewProveedorDetail', 'proveedor_detail');
     $this->new_url('/sistema/proveedor/', 'ViewProveedor', 'proveedor');
     $this->new_url('/sistema/login/', 'ViewLogin', 'login');
     $this->new_url('/sistema/logout/', 'ViewLoginLogout', 'logout');

@@ -62,17 +62,17 @@ class Model
     }
 
     function getAll(){
-        $query = $this->conn->query("SELECT * FROM cliente");
+        $query = $this->conn->query("SELECT * FROM $this->table");
         $query = $query->fetchAll(PDO::FETCH_ASSOC);
         return $query;
     }
+    function getDetail($id){
+        $query = $this->conn->query("SELECT * FROM $this->table WHERE id=$id");
+        $query = $query->fetch(PDO::FETCH_ASSOC);
+        return $query;
+    }
     
-/*     function create($datos){
-            
-        $this->conn->query("INSERT INTO cliente " . ' ' . $this->consultaPost($datos));
-        echo "se ha creado el usuario conn exito";
 
-     } */
 
      function get_page($registrosPorPagina,$offset,$filtro,$campo)
      {

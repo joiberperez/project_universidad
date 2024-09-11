@@ -13,6 +13,7 @@
                                         <h1 class="page-header-title">
                                             <div class="page-header-icon"><i data-feather="users"></i></div>
                                             Bienvenido <?= $_SESSION["nombre"] ?>
+                                            <?php echo $this->get_path("cliente_list",1); ?>
                                         </h1>
                                         <div class="page-header-subtitle">Puedes agregar y listar clientes</div>
                                     </div>

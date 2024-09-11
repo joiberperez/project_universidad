@@ -17,6 +17,7 @@
                     <td>V- <?= $cliente["cedula"]; ?></td>
                     <td><?= $cliente["direccion"]; ?></td>
                     <td><?= $cliente["telefono"]; ?></td>
+                   
                 </tr>
             <?php } ?>
         
