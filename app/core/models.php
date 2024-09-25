@@ -8,7 +8,7 @@ class Model
     private $username = 'jr';
     private $password = 'jr12345';
     public $table;
-    protected $conn;
+    public $conn;
 
     public function __construct(){
         $this->conn = $this->conexion();

@@ -16,8 +16,8 @@
                 <td><?= $proveedor["rif"]; ?></td>
                 <td><?= $proveedor["correo_electronico"]; ?></td>
                 <td><?= $proveedor["telefono_principal"]; ?></td>
-
-                <td><button class="btn btn-secondary btn-sm"  type="button" onclick="abrirModal(<?=$proveedor['id']?>)" ><i class="fa-solid fa-magnifying-glass"></i></button></td>
+                
+                <td><button class="btn btn-secondary btn-sm"  type="button" onclick='abrirModal("<?=$this->get_path("proveedor_detail",$proveedor["id"])?>")' ><i class="fa-solid fa-magnifying-glass"></i></button></td>
             </tr>
         <?php } ?>
 
@@ -62,11 +62,24 @@
 
 <script>
     
+    function abrirModal(id){
+       
+    
+    $.get(id).done(function(data){
+        $("#modal").html(data);
+        $(".modal").modal("show");
+        
+    }) 
+    }
     function cargarPagina(page) {
         $.get("/sistema/proveedor/page/" + page + "/").done(function(e) {
             
             $("#data-table").html(e)
-
+            
         })
     }
+    
+    
+    console.log($("#data-table").html())
 </script>
+

@@ -5,7 +5,8 @@ $apps = [
     'proveedor',
     'home',
     'login',
-    'producto'
+    'producto',
+    'venta'
 ]
 
 

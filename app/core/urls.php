@@ -38,3 +38,7 @@
     $this->new_url('/sistema/login/', 'ViewLogin', 'login');
     $this->new_url('/sistema/logout/', 'ViewLoginLogout', 'logout');
     $this->new_url('/sistema/producto/', 'ViewProducto', 'producto');
+    $this->new_url('/sistema/producto/create/', 'ViewProductoCreate', 'producto_create');
+    $this->new_url('/sistema/producto/page/@int/', 'ViewProductoList', 'producto_list');
+    $this->new_url('/sistema/venta/', 'ViewVenta', 'venta');
+    $this->new_url('/sistema/venta/create/', 'ViewVentaCreate', 'venta_create');

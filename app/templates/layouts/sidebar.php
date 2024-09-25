@@ -36,7 +36,7 @@
                                 Clientes
                               
                             <!-- Sidenav Accordion (Applications)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
+                            <a class="nav-link collapsed" href="<?= $this->get_path("venta") ?>" >
                                 <div class="nav-link-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
                                 Ventas
                                
