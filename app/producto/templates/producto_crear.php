@@ -52,7 +52,7 @@
                             <div class="col-lg-6 mb-3">
     
                                 <label for="exampleFormControlTextarea1" class="form-label">Categoria</label>
-                                <select class="form-select" id="select" aria-label="Default select example" name="proveedor">
+                                <select class="form-control" id="select2" aria-label="Default select example" name="proveedor">
                                     <?php foreach ($this->get_queryset_proveedor() as $categoria) { ?>
                                         <option value="<?= $categoria["id"] ?>"><?= $categoria["nombre_empresa"] ?></option>
     
@@ -85,12 +85,11 @@
         </div>
     </div>
 </div>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script>
     $(document).ready(function(){
         
-        $('#select').select2({
+        $('#select2').select2({
         dropdownParent: $('.modal')
     });
     })
