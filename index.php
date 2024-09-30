@@ -13,8 +13,6 @@
 
     $router = new Router(); # Inicia el router 
     $router->run(); # Ejecuta el super MVC
-  
-
 ?>
 
 
