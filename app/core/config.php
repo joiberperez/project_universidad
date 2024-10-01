@@ -23,6 +23,6 @@
 
 
 
-define("TEMPLATES", ROOT . "/templates/");
+    define("TEMPLATES", ROOT . "/templates/");
 
 ?>
