@@ -44,23 +44,31 @@ class ViewClienteList extends View {
 
     public function get(){
         $model = new ModelCliente();
-        $filtro = isset($_GET["filtro"]) ? $_GET["filtro"] : "";
-        $totalRegistros = $model->get_count(campo:'cedula',filtro:$filtro);
-        $registrosPorPagina = 10; // Número de registros por página
-        $this->totalPaginas = ceil($totalRegistros / $registrosPorPagina);
-        $this->paginaActual = isset($this->page) ? (int)$this->page : 1;
+        
+        // Obtener el filtro
+        $filtro = $_GET["filtro"] ?? ""; // Uso del operador null coalescing
 
-        // Asegurarse de que la página actual esté dentro de los límites
-        if ($this->paginaActual < 1) $this->paginaActual = 1;
-        if ($this->paginaActual > $this->totalPaginas) $this->paginaActual = $this->totalPaginas;
+        // Contar total de registros
+        $totalRegistros = $model->get_count(campo: 'cedula', filtro: $filtro);
+        $registrosPorPagina = 10;
+        $this->totalPaginas = ceil($totalRegistros / $registrosPorPagina);
+        
+        // Determinar la página actual
+        $this->paginaActual = max(1, min($this->totalPaginas, (int)($this->page ?? 1)));
+
+        // Calcular el offset
         $offset = ($this->paginaActual - 1) * $registrosPorPagina;
-        $this->data = $model->get_page($registrosPorPagina,max(0,$offset),$filtro,campo:'cedula');
+
+        // Obtener los registros de la página actual
+        $this->data = $model->get_page($registrosPorPagina, max(0, $offset), $filtro, campo: 'cedula');
+
+        // Renderizar la vista
         $this->render($this->template);
-        if(empty($this->data)){
+        
+        // Mensaje si no hay resultados
+        if (empty($this->data)) {
             echo "<h1 style='text-align:center'>No se ha encontrado los resultados</h1>";
         }
-
-        
     }
 
 }

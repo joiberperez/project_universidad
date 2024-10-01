@@ -7,8 +7,8 @@
     *********************************************************************/
 
     /** variables con datos de conexion a la base */
-    $driver = "mysql";
-    $host = "localhost";
-    $database = "chapulin";
-    $user = "sathoru";
-    $passwd = "TssJpo2001*";
+    $this->driver = "mysql";
+    $this->host = "localhost";
+    $this->database = "chapulin";
+    $this->user = "sathoru";
+    $this->passwd = "TssJpo2001*";
