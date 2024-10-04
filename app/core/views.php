@@ -12,6 +12,7 @@
         public $template = ''; # Nombre de la plantilla a solicitar
         public $model = null; # Modelo asociado a esta vista
         public $object = null; # AUN POR ENTENDER
+        public $context = []; # Array que contine todas las variables para la plantilla
 
         # Cumpliendo principios SOLID se deja el dispatch en un metodo privado
         # Luego se ejecuta desde aqui para a lo que se genere la instancia de la ruta ejecutarlo
@@ -42,7 +43,10 @@
 
         # Este metodo se encarga de imprimir en pantalla el contenido de una plantilla
         # Html que se le haya solicitado
-        public function render($template) {
+        public function render($template,$context=null) {
+            if(!empty($context)){
+                extract($context);
+            }
             include FILE_APPS; # Importa el arreglo con las apps registradas
 
             # Valida que exista una carpeta que contenga las plantillas

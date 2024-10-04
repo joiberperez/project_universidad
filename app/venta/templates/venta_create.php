@@ -43,7 +43,7 @@
                                             <div class="col-4">
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                    <input type="email" class="form-control" onclick="abrirModalProducto();" id="producto_nombre" placeholder="name@example.com">
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -51,7 +51,7 @@
                                                 <div class="input-group mb-3">
                                                     <button class="btn btn-outline-primary" onclick="decrement()" type="button" id="button-addon1">-</button>
                                                     <input type="text" class="form-control" id="cantidad" value="1" placeholder="" aria-label="Texto de ejemplo con complemento de botón" aria-describedby="button-addon1">
-                                                    <button class="btn btn-outline-primary" onclick="increment()" type="button" >+</button>
+                                                    <button class="btn btn-outline-primary" onclick="increment()" type="button">+</button>
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -69,7 +69,7 @@
                                             <div class="col-3">
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlInput1" class="form-label">Monto</label>
-                                                    <input type="email" class="form-control" id="exampleFormControlInput1" readonly placeholder="name@example.com">
+                                                    <input type="email" class="form-control" id="monto_producto" readonly placeholder="name@example.com">
                                                 </div>
 
                                             </div>
@@ -131,10 +131,7 @@
 
                                                         <label for="exampleFormControlInput1" class="form-label">Selecciona Cliente</label>
                                                         <select class="form-select" id="select2" aria-label="Default select example" name="proveedor">
-                                                            <?php foreach ($this->get_queryset_cliente() as $cliente) { ?>
-                                                                <option value="<?= $cliente["id"] ?>"><?= $cliente["nombre"] ?></option>
 
-                                                            <?php } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -179,101 +176,105 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Detalles del Proveedor</h5>
+
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
+
             <div class="modal-body">
-            <!-- <div class="row">
-                <div class="col-6">
-                    <img class="opacity-75 " src="<= PUBLICO ?>images/producto2.png" alt="clientes" style="width: 50%;">
-
-                </div>
-                <div class="col-6 align-middle"><h1 class="text-center pt-5">Registro de producto</h1></div>
-            </div> -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 mb-3">
-    
-                                <label for="exampleFormControlInput1" class="form-label">Nombre de Producto</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" placeholder="name@example.com">
-    
-                            </div>
-                            <div class="col-lg-6 mb-3">
-    
-                                <label for="exampleFormControlTextarea1" class="form-label" >iva</label>
-                                <select class="form-select" aria-label="Default select example" name="iva">
-    
-                                    <option value="0">No</option>
-                                    <option value="1">Si</option>
-    
-    
-                                </select>
-    
-                            </div>
-                           
-                            
-                            <div class="col-lg-6 mb-3">
-    
-                                <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text bg-primary text-light" >$</span>
-                                    <input type="text" class="form-control" name="precio" aria-label="Amount (to the nearest dollar)">
-                                    <span class="input-group-text">.00</span>
-                                </div>
-    
-                            </div>
-    
-                        </div>
-
+                <div class="container">
+                    <div class="input-group input-group-joined">
+                        <span class="input-group-text">
+                            <i data-feather="search"></i>
+                        </span>
+                        <input type="text" class="form-control " id="buscarProducto" onkeyup="listarProductosVenta()" placeholder="busca producto por codigo o nombre">
                     </div>
 
+                    <div class="mt-5"></div>
+
+                    <ul class="list-group" id="listaProducto">
+                        <li class="list-group-item bg-success text-white text-center">Productos</li>
+
+                    </ul>
 
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit" data-bs-dismiss="modal">Registrar</button>
-                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            
+
+
+
+            </div>
+
+
         </div>
     </div>
 </div>
 
 <script>
-    /**
-     * Minus and Plus buttons to NUMBER type INPUTS
-     */
+ 
 
-    // Select all INPUTS with type NUMBER
+    
     $(document).ready(function() {
         $('#select2').select2({
             theme: 'bootstrap-5', // Utiliza el tema de Bootstrap
-            placeholder: 'Selecciona una opción',
+            placeholder: 'Selecciona un cliente',
+            minimumInputLength: 3,
+            language: "es",
+            ajax: {
+                url: '<?= $this->get_path("venta_cliente_list") ?>', // URL del servidor que devuelve datos
+                dataType: 'json', // Tipo de datos esperados
+                delay: 250, // Retardo antes de realizar la solicitud
+                processResults: function(data) {
+                    console.log(data);
+                    // Procesar los resultados recibidos del servidor
+                    
+                    return {
+                        results: data.map(function(cliente) {
+                            return {
+                                id: cliente.id, // El valor del ID del país
+                                text: cliente.nombre // El texto a mostrar en el dropdown
+                            };
+                        })
+                    };
+                },
+                cache: true
+            }
 
         });
     });
 </script>
 <script>
-
-    function abrirModalProducto(){
-
-        
+    function abrirModalProducto() {
         $(".modal").modal("show");
     }
 
     function increment() {
         let input = $("#cantidad").val();
-        
+
         $("#cantidad").val(parseInt(input) + 1)
     }
-    
+
     function decrement() {
         let input = $("#cantidad").val();
-        
+
         $("#cantidad").val(parseInt(input) - 1)
-        
+
+    }
+
+    function listarProductosVenta() {
+        let filtro = $("#buscarProducto").val();
+        $.get("<?= $this->get_path("venta_create_list") ?>", {
+            filtro
+        }).done(function(data) {
+            $("#listaProducto").html(data);
+        })
+    }
+
+    function cargarProducto(nombre, precio) {
+
+        $("#producto_nombre").val(nombre)
+        $("#monto_producto").val(`$${precio}`)
+        $(".modal").modal("hide");
+
     }
 </script>

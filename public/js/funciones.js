@@ -8,3 +8,4 @@ const alertar = ()=>{
       alert(ruta+ 'x2');
   
 }
+
