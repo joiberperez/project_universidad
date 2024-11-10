@@ -10,5 +10,5 @@
     $this->driver = "mysql";
     $this->host = "localhost";
     $this->database = "chapulin";
-    $this->user = "sathoru";
-    $this->passwd = "TssJpo2001*";
+    $this->user = "jr";
+    $this->passwd = "jr12345";

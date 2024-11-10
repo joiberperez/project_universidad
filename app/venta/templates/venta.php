@@ -9,47 +9,46 @@
         <div id="layoutSidenav_content">
 
             <main>
-                <!-- Main page content-->
-                <div class="container-xl px-4 mt-5">
-                    <!-- Custom page header alternative example-->
-                    <div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-3">
-                        <div class="me-4 mb-3 mb-sm-0">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/sistema/">Inicio</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">ventas</li>
-                                </ol>
-                            </nav>
-                            <h1>Ventas</h1>
+                <header style="background-color: #2A3F54;" class="page-header page-header-dark bg-primary pb-10">
+                    <div class="container-xl px-4">
+                        <div class="page-header-content pt-4">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-auto mt-4">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="users"></i></div>
+                                        Ventas
 
-                            <div class="row">
-                                <div class="col-lg-12">
-                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-  <div class="card-header">Facturas realizadas</div>
-  <div class="card-body">
-    <div class="row">
-        <div class="col-6">
-            <i class="fa-solid fa-clipboard-list" style="width: 100px;"></i>
-
-        </div>
-        <div class="col-6">
-            <p class="card-text">500</p>
-
-        </div>
-    </div>
-  </div>
-
+                                    </h1>
+                                    <div class="page-header-subtitle">Aqui puedes gestionar las ventas</div>
+                                    <a class="mt-3 btn btn-primary" href="<?= $this->get_path("venta_create"); ?>">Agregar Venta</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-xl px-4 mt-n10">
+
+                    <div class="row">
+                        <div class="col-xxl-8">
+                            <!-- Tabbed dashboard card example-->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Listado de Ventas realizadas
+                                </div>
+
+                                <div class="card-body">
+                                    <div id="data-table">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Illustration dashboard card example-->
+
 
                         </div>
-                        <!-- Date range picker example-->
 
                     </div>
-                    <!-- Illustration dashboard card example-->
-
-
-
                 </div>
             </main>
 
@@ -69,5 +68,12 @@
     </div>
 
     <?php include ROOT . "/templates/layouts/scripts.php"; ?>
-
+    <script>
+         $(document).ready(function(){
+            $.get("/sistema/cliente/page/1/").done(function(data){
+                $("#data-table").html(data);
+            })
+            
+        })
+    </script>
 </body>

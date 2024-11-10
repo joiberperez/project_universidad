@@ -41,6 +41,10 @@
                                 Ventas
                                
                             <!-- Sidenav Accordion (Flows)-->
+                            <?php
+                            if( $_SESSION['usuario_privilegio'] == "a"):
+                            
+                            ?>
                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
                                 <div class="nav-link-icon"><i class="fa-solid fa-truck"></i></div>
                                 Proveedores
@@ -54,33 +58,42 @@
                                     <a class="nav-link" href="<?=$this->get_path('proveedor');?>">Listado</a>
                                 </nav>
                             </div>
-                            <!-- Sidenav Heading (UI Toolkit)-->
+                            <?php
+                            endif
                             
-                            <!-- Sidenav Accordion (Layout)-->
-                            <a class="nav-link collapsed" href="<?= $this->get_path("producto") ?>">
+                            ?>
+                            <!-- Sidenav Heading (UI Toolkit)-->
+                            <?php
+                            if( $_SESSION['usuario_privilegio'] == "a"): ?>
+                                <!-- Sidenav Accordion (Layout)-->
+                                <a class="nav-link collapsed" href="<?= $this->get_path("producto") ?>">
                                 <div class="nav-link-icon"><i class="fa-brands fa-shopify"></i></div>
                                 Productos
-                               
-                            <!-- Sidenav Accordion (Components)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
+                                
+                                <!-- Sidenav Accordion (Components)-->
+                                
+                                <!-- Sidenav Accordion (Utilities)-->
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                    <div class="nav-link-icon"><i data-feather="tool"></i></div>
+                                    Respaldo
+                                    
+                                    <?php
+                                endif
+                                
+                                ?>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
                                 <div class="nav-link-icon"><i class="fa-solid fa-file-invoice"></i></div>
                                 Reportes
-                               
-                            <!-- Sidenav Accordion (Utilities)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                                <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                                Respaldo
-                              
-                     
-                            <!-- Sidenav Heading (Addons)-->
-                            
-                            <!-- Sidenav Link (Charts)-->
-                            <a class="nav-link" href="charts.html">
+                                <!-- Sidenav Heading (Addons)-->
+                                
+                                <!-- Sidenav Link (Charts)-->
+                                <a class="nav-link" href="charts.html">
                                 <div class="nav-link-icon"><i class="fa-solid fa-gear"></i></div>
                                 Configuración
-                            </a>
-                            <!-- Sidenav Link (Tables)-->
-                            
+                                </a>
+                                <!-- Sidenav Link (Tables)-->
+                          
+                                
                         </div>
                     </div>
                     <!-- Sidenav Footer-->

@@ -22,7 +22,7 @@ class ViewVentaClientList extends View{
     public function get_queryset($filtro){
         $model = new ModelCliente();
         $cliente = $model->conn->query("SELECT * FROM cliente WHERE cedula LIKE '%$filtro%' limit 5");
-        return $cliente->fetchAll();
+        return $cliente->fetchAll(PDO::FETCH_ASSOC);
 
     }
 

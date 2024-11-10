@@ -23,9 +23,15 @@
             <main>
                 <!-- Main page content-->
                 <div class="container-xl px-4 mt-5">
+                <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="<?= $this->get_path("venta")?>">Venta</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Nueva Venta</li>
+                                </ol>
+                            </nav>
                     <!-- Custom page header alternative example-->
                     <div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-3">
-                        <div class="row">
+                    <div class="row">
                             <div class="col-lg-8 col-sm-12">
                                 <div class="card" style="width: 100%">
 
@@ -83,7 +89,7 @@
                                                         <label for="exampleFormControlInput1" class="form-label"></label>
                                                         <div class="mb-3 me-1">
 
-                                                            <button class="btn btn-primary btn-sm">Agregar</button>
+                                                            <button class="btn btn-primary btn-sm" onclick="agregarListaProducto()">Agregar</button>
                                                         </div>
                                                     </div>
                                                     <div class="">
@@ -99,6 +105,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
 
@@ -140,8 +147,20 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                
                             </div>
+                            <div class="row">
+                                        <div class="col-lg-8">
+                                            <table class="table">
+                                                <thead>
+                                                    <th>Codigo</th>
+                                                    <th>Nombre</th>
+                                                    <th>precio</th>
+                                                    <th>cantidad</th>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
                         </div>
 
 
@@ -243,23 +262,10 @@
         });
     });
 </script>
+<script src="<?=PUBLICO . 'js/venta.js'?>"></script>
+
 <script>
-    function abrirModalProducto() {
-        $(".modal").modal("show");
-    }
-
-    function increment() {
-        let input = $("#cantidad").val();
-
-        $("#cantidad").val(parseInt(input) + 1)
-    }
-
-    function decrement() {
-        let input = $("#cantidad").val();
-
-        $("#cantidad").val(parseInt(input) - 1)
-
-    }
+  
 
     function listarProductosVenta() {
         let filtro = $("#buscarProducto").val();
@@ -270,11 +276,5 @@
         })
     }
 
-    function cargarProducto(nombre, precio) {
 
-        $("#producto_nombre").val(nombre)
-        $("#monto_producto").val(`$${precio}`)
-        $(".modal").modal("hide");
-
-    }
 </script>

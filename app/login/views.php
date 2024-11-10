@@ -42,6 +42,8 @@
                         }
                         //se crean las variables para los datos del usuario
                         $_SESSION['usuario'] = $datosUsuario['usuario'];
+                        $_SESSION['usuario_id'] = $datosUsuario['id'];
+                        $_SESSION['usuario_privilegio'] = $datosUsuario['privilegios'];
 
                         //redirige al home
                         header('Location: /sistema/');

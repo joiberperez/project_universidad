@@ -33,7 +33,7 @@
                 echo $e->getMessage(); # Se muestra el mensaje de error
                 exit(); # Mata la ejecucion de PHP
             }
-        }
+        } 
 
         # Metodo que se ejecuta al instanciar o heredar la clase
         public function __construct(){
